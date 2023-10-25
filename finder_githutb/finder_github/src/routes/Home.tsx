@@ -1,8 +1,8 @@
-import React from 'react'
+import Search from "../componentes/Search";
 
 const Home = () => {
   return (
-    <div>Home</div>
+   <Search />
   )
 }
 

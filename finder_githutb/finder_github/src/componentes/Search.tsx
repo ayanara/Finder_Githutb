@@ -1,13 +1,21 @@
+type SearchProps = {
+  loadUser: (userName: string) => Promise<void>
+}
 import { BsSearch } from 'react-icons/bs';
+import { useState } from 'react';
 
-const Search = () => {
+const Search = ({loadUser} : SearchProps) => {
+  const [ userName, setUserName ] = useState("");
   return (
     <div>
       <h2>Busque por um usuário</h2>
       <p>Conheça seus melhores repositórios</p>
       <div>
-        <input type='text' placeholder='Digite o nome do usuário'></input>
-        <button>
+        <input 
+          type='text' placeholder='Digite o nome do usuário'
+          onChange={(event) => setUserName(event.target.value)}></input>
+        <button
+        onClick={() => loadUser(userName)}>
           <BsSearch />
         </button>
       </div>

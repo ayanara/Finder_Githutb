@@ -9,7 +9,7 @@ const Home = () => {
   // Necessário para salvar o estado do usuário, esse estado começa como null
 
   const loadUser = async (userName: string) => {
-    const res = await fetch(`http://api.github.com.users/${userName}`)
+    const res = await fetch(`http://api.github.com/users/${userName}`)
     const data = await res.json()
 
     console.log(data)
